@@ -1,27 +1,26 @@
-package com.dearwolves.demo.domain;
+package com.dearwolves.demo.model.dto;
 
-import javax.persistence.*;
 import java.io.Serializable;
 
-@Entity
-@Table(name="student")
-public class Student implements Serializable {
+public class StudentDTO implements Serializable {
 
-    public Student(String firstName, String lastName) {
+    private static final long serialVersionUID = -4628101634068246702L;
+
+    public StudentDTO() {}
+
+    public StudentDTO(long id, String firstName, String lastName) {
+        this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
     }
 
-    private static final long serialVersionUID = -950479215200452469L;
+    public StudentDTO(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-
-    @Column(name = "firstname")
     private String firstName;
-
-    @Column(name = "lastname")
     private String lastName;
 
     public long getId() {
