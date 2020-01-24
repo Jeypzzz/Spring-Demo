@@ -28,7 +28,7 @@ public class StudentController {
     }
 
     @RequestMapping(value = "/student/{id}", method = RequestMethod.POST)
-    public ResponseEntity<?> getStudentById(@PathVariable String id){
+    public ResponseEntity<?> getStudentById(@PathVariable long id){
         Student student = studentService.getStudentById(id);
 
         if(student == null)

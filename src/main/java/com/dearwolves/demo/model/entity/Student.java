@@ -1,6 +1,7 @@
 package com.dearwolves.demo.model.entity;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 import java.io.Serializable;
 
 @Entity
@@ -26,10 +27,11 @@ public class Student implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
+    @NotBlank(message = "First name is mandatory")
     @Column(name = "firstname")
     private String firstName;
 
-    @Column(name = "lastname")
+    @NotBlank(message = "Last name is mandatory")
     private String lastName;
 
     public long getId() {

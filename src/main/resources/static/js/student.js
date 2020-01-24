@@ -2,7 +2,7 @@ $(function() {
     console.log( "ready!" );
     $("#cResult").hide();
 
-    var postJSON = function(url, data, callback) {
+    let postJSON = function(url, data, callback) {
         return jQuery.ajax({
             headers: {
                 'Accept': 'application/json',
@@ -17,8 +17,8 @@ $(function() {
     };
 
     $("#cSubmit").on("click", function() {
-        var fName = $("#cFirstName").val();
-        var lName =  $("#cLastName").val();
+        let fName = $("#cFirstName").val();
+        let lName =  $("#cLastName").val();
 
         if(fName === ""|| lName === "") {
             alert("Empty Parameters");

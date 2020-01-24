@@ -11,7 +11,7 @@ public interface StudentService {
 
     List<Student> getStudents();
 
-    Student getStudentById(String id);
+    Student getStudentById(long id);
 
     Student updateStudent(Student student);
 

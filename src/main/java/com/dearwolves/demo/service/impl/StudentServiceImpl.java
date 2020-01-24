@@ -34,13 +34,9 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
-    public Student getStudentById(String id) {
-        try {
-            Optional<Student> student = studentRepository.findById(Long.parseLong(id));
-            return student.orElse(null);
-        } catch (NumberFormatException e) {
-            return  null;
-        }
+    public Student getStudentById(long id) {
+        Optional<Student> student = studentRepository.findById(id);
+        return student.orElse(null);
     }
 
     @Override
