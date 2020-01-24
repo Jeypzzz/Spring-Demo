@@ -29,7 +29,8 @@ public class HomeController {
     }
 
     @GetMapping("/add")
-    public String showAddForm(Student student) {
+    public String showAddForm(Student student, Model model) {
+        model.addAttribute(new Student());
         return "add-student";
     }
 
